@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3BtNTA3IiwiYSI6ImNrNmxmYnZrMTAzNzAzaHBodTRmd
 var initialCenterPoint = [-73.9403373, 40.848137]
 var initialZoom = 13
 
-var defaultText = '<p>Move the mouse over the map to see when a property was built </p>'
+var defaultText = '<p>Move the mouse over the property to see energy consumption statistics.</p>'
 $('#feature-info').html(defaultText)
 
 // create an object to hold the initialization options for a mapboxGL map
@@ -25,9 +25,9 @@ map.addControl(new mapboxgl.NavigationControl());
 map.on('style.load', function() {
 
   // add a geojson source to the map using our external geojson file
-  map.addSource('Washington_Heights', {
-    type: 'geojson',
-    data: './data/Washington_Heights.geojson',
+  map.addSource('castle_village', {
+    type: 'feature',
+    data: './data/castle_village.geojson',
   });
 
   // let's make sure the source got added by logging the current map state to the console
@@ -35,50 +35,12 @@ map.on('style.load', function() {
 
   // add a layer for our custom source
   map.addLayer({
-    id: 'fill-Washington_Heights',
+    id: 'fill-castle_village',
     type: 'fill',
-    source: 'Washington_Heights',
+    source: 'castle_village',
     paint: {
-      'fill-color': {
-        property: 'YearBuilt',
-        stops: [
-          [
-            1700,
-            'pink'
-          ],
-          [
-            1800,
-            'orange'
-          ],
-          [
-            1850,
-            'blue'
-          ],
-          [
-            1900,
-            'green'
-          ],
-          [
-            1920,
-            'steelblue'
-          ],
-          [
-            1950,
-            'lavender'
-          ],
-          [
-            1970,
-            'yellow'
-          ],
-          [
-            2000,
-            'turquoise'
-          ],
+      'fill-color'
 
-        ]
-      }
-    }
-  })
 
   // add an empty data source, which we will use to highlight the lot the user is hovering over
   map.addSource('highlight-feature', {

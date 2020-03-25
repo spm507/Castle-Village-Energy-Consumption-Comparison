@@ -26,7 +26,7 @@ map.on('style.load', function() {
 
   // add a geojson source to the map using our external geojson file
   map.addSource('castle_village', {
-    type: 'feature',
+    type: 'geojson',
     data: './data/castle_village.geojson',
   });
 
@@ -38,8 +38,7 @@ map.on('style.load', function() {
     id: 'fill-castle_village',
     type: 'fill',
     source: 'castle_village',
-    paint: {
-      'fill-color'
+
 
 
   // add an empty data source, which we will use to highlight the lot the user is hovering over
@@ -47,9 +46,7 @@ map.on('style.load', function() {
     type: 'geojson',
     data: {
       type: 'FeatureCollection',
-      features: []
-    }
-  })
+    
 
   // add a layer for the highlighted lot
   map.addLayer({

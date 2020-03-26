@@ -109,12 +109,8 @@ paint: {
   map.on('mousemove', function (e) {
     // query for the features under the mouse, but only in the lots layer
     var features = map.queryRenderedFeatures(e.point, {
-        layers: ['fill-castle_village'],
-        layers: ['fill-london_terrace'],
-        layers: ['fill-boulevard_gardens'],
-        layers: ['fill-100_barclay_street'],
-
-    });
+    layers: ['fill-castle_village', 'fill-london_terrace', 'fill-boulevard_gardens', 'fill-100_barclay_street']
+});
 
     // if the mouse pointer is over a feature on our layer of interest
     // take the data for that feature and display it in the sidebar
@@ -123,9 +119,17 @@ paint: {
 
       var hoveredFeature = features[0]
       var featureInfo = `
-        <h4>${hoveredFeature.properties.Address}</h4>
+        <h4>${hoveredFeature.properties.PropertyName}</h4>
+        <p><strong>Picture:</strong> ${hoveredFeature.properties.Picture}</p>
+        <p><strong>Address:</strong> ${hoveredFeature.properties.Address}</p>
+        <p><strong>Borough:</strong> ${hoveredFeature.properties.Borough}</p>
+        <p><strong>website:</strong> ${hoveredFeature.properties.website}</p>
         <p><strong>Year Built:</strong> ${hoveredFeature.properties.YearBuilt}</p>
-        <p><strong>Zoning:</strong> ${hoveredFeature.properties.ZoneDist1}</p>
+        <p><strong> ENERGY STAR Score:</strong> ${hoveredFeature.properties.Score}</p>
+        <p><strong>Self-Reported Gross Floor Area (ft²):</strong> ${hoveredFeature.properties.FloorArea}</p>
+        <p><strong>Natural Gas Use (kBtu):</strong> ${hoveredFeature.properties.Gas}</p>
+        <p><strong>Electricity Use - Grid Purchase (kWh):</strong> ${hoveredFeature.properties.Electricity}</p>
+        <p><strong>Total GHG Emissions (Metric Tons CO2e):</strong> ${hoveredFeature.properties.Emissions}</p>
   `
       $('#feature-info').html(featureInfo)
 

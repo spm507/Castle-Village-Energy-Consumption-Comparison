@@ -1,1 +1,22 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[-74.0134012699127,40.7137118599996],[-74.01258587837219,40.71332151208186],[-74.0124785900116,40.71388263649397],[-74.01328325271606,40.71422418816861],[-74.0134012699127,40.7137118599996]]]}}]}
+{"type":"FeatureCollection",
+  "features":[
+    {
+      "type":"Feature",
+      "properties":{
+        "PropertyName": "100 Barclay Street",
+        "Address": "100 Barclay Street",
+        "Borough":"Manhattan",
+        "website" : "https://100barclay.com/",
+        "FloorArea" : "978706",
+        "YearBuilt": "1930",
+        "Score": "44",
+        "Gas": "6757746.8",
+        "Electricity" : "24501011.5",
+        "Emissions" : "7438.8",
+        "Picture" :"https://tribecacitizen.com/wp-content/uploads/2017/06/100-Barclay.jpg"
+        },
+        "geometry":{
+          "type":"Polygon",
+          "coordinates":[
+            [
+              [-74.0134012699127,40.7137118599996],[-74.01258587837219,40.71332151208186],[-74.0124785900116,40.71388263649397],[-74.01328325271606,40.71422418816861],[-74.0134012699127,40.7137118599996]]]}}]}

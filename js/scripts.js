@@ -28,7 +28,6 @@ map.on('style.load', function() {
   map.addSource('castle_village', {
     type: 'geojson',
     data: './data/castle_village.geojson',
-
   });
 
 
@@ -38,10 +37,10 @@ map.on('style.load', function() {
   // add a layer for our custom source
   map.addLayer({
     id: 'fill-castle_village',
-    type: 'Polygon',
+    type: 'fill',
     source: 'castle_village',
     paint: {
-        'polygon-color': tan,
+        'fill-color': 'tan',
       }
     });
 

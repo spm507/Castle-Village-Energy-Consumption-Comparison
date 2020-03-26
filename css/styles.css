@@ -39,12 +39,30 @@ h3 {
   margin-bottom:15px;
 }
 
+.mapboxgl-marker:hover {
+  cursor: pointer;
+}
+/* this is for the city popup icons */
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.mapboxgl-popup {
+max-width: 200px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
 /* on hover, make the background darker and turn the cursor to a pointer */
 button:hover {
   cursor: pointer;
   background-color: #006987;
 }
-
 
 /* sidebar is fixed with and positioned to the left */
 #sidebar {

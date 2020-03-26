@@ -83,13 +83,7 @@ map.on('style.load', function() {
             }
           });
 
-  map.addSource('highlight-feature', {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      features: []
-    }
-  });
+
 
 // add a layer for the highlighted lot
 map.addLayer({
@@ -104,46 +98,31 @@ paint: {
 });
 
 
-  // listen for the mouse moving over the map and react when the cursor is over our data
+      // When a click event occurs on a feature in the res layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('mouseenter', 'res-layer', function(e) {
+      console.log(e)
+      new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.IND_NAME)
+      .addTo(map);
+    });
 
-  map.on('mousemove', function (e) {
-    // query for the features under the mouse, but only in the lots layer
-    var features = map.queryRenderedFeatures(e.point, {
-    layers: ['fill-castle_village', 'fill-london_terrace', 'fill-boulevard_gardens', 'fill-100_barclay_street']
-});
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'res-layer', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
 
-    // if the mouse pointer is over a feature on our layer of interest
-    // take the data for that feature and display it in the sidebar
-    if (features.length > 0) {
-      map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
 
-      var hoveredFeature = features[0]
-      var featureInfo = `
-        <h4>${hoveredFeature.properties.PropertyName}</h4>
-        <p><strong>Picture:</strong> ${hoveredFeature.properties.Picture}</p>
-        <p><strong>Address:</strong> ${hoveredFeature.properties.Address}</p>
-        <p><strong>Borough:</strong> ${hoveredFeature.properties.Borough}</p>
-        <p><strong>website:</strong> ${hoveredFeature.properties.website}</p>
-        <p><strong>Year Built:</strong> ${hoveredFeature.properties.YearBuilt}</p>
-        <p><strong> ENERGY STAR Score:</strong> ${hoveredFeature.properties.Score}</p>
-        <p><strong>Self-Reported Gross Floor Area (ft²):</strong> ${hoveredFeature.properties.FloorArea}</p>
-        <p><strong>Natural Gas Use (kBtu):</strong> ${hoveredFeature.properties.Gas}</p>
-        <p><strong>Electricity Use - Grid Purchase (kWh):</strong> ${hoveredFeature.properties.Electricity}</p>
-        <p><strong>Total GHG Emissions (Metric Tons CO2e):</strong> ${hoveredFeature.properties.Emissions}</p>
-  `
-      $('#feature-info').html(featureInfo)
-
-      // set this lot's polygon feature as the data for the highlight source
-      map.getSource('highlight-feature').setData(hoveredFeature.geometry);
-    } else {
-      // if there is no feature under the mouse, reset things:
-      map.getCanvas().style.cursor = 'default'; // make the cursor default
-
-      // reset the highlight source to an empty featurecollection
-      map.getSource('highlight-feature').setData({
-        type: 'FeatureCollection',
-        features: []
-      });
+    var popup = new mapboxgl.Popup()
+    // When a click event occurs on a feature in the res layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('mouseenter', 'fill-Res', function(e) {
+      popup
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.IND_NAME, e.features[0].properties.POP_TOT)
+      .addTo(map);
+    });
 
       // Fly to Buttons to each divisions
       $('#London').on('click', function() {
@@ -170,10 +149,3 @@ paint: {
           zoom: 16
         })
       })
-
-      // reset the default message
-      $('#feature-info').html(defaultText)
-    }
-  })
-
-})

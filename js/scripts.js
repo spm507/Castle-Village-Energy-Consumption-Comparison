@@ -28,6 +28,7 @@ map.on('style.load', function() {
   map.addSource('castle_village', {
     type: 'geojson',
     data: './data/castle_village.geojson',
+
   });
 
 

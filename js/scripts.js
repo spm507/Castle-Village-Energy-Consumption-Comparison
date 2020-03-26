@@ -30,15 +30,19 @@ map.on('style.load', function() {
     data: './data/castle_village.geojson',
   });
 
+
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
 
   // add a layer for our custom source
   map.addLayer({
     id: 'fill-castle_village',
-    type: 'fill',
+    type: 'Polygon',
     source: 'castle_village',
-
+    paint: {
+        'polygon-color': tan,
+      }
+    });
 
 
   // add an empty data source, which we will use to highlight the lot the user is hovering over
@@ -46,7 +50,8 @@ map.on('style.load', function() {
     type: 'geojson',
     data: {
       type: 'FeatureCollection',
-    
+      paint: 'blue'
+
 
   // add a layer for the highlighted lot
   map.addLayer({
@@ -65,7 +70,7 @@ map.on('style.load', function() {
   map.on('mousemove', function (e) {
     // query for the features under the mouse, but only in the lots layer
     var features = map.queryRenderedFeatures(e.point, {
-        layers: ['fill-Washington_Heights'],
+        layers: ['fill-washington_heights'],
     });
 
     // if the mouse pointer is over a feature on our layer of interest

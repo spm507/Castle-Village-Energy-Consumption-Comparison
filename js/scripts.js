@@ -1,11 +1,8 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3BtNTA3IiwiYSI6ImNrNmxmYnZrMTAzNzAzaHBodTRmd2hpZm0ifQ.Tf4_3bYwjcuHv39tq01CWQ';
 
 
-var initialCenterPoint = [-73.9403373, 40.848137]
-var initialZoom = 13
-
-var defaultText = '<p>Move the mouse over the property to see energy consumption statistics.</p>'
-$('#feature-info').html(defaultText)
+var initialCenterPoint = [-73.939862, 40.853433]
+var initialZoom = 16
 
 // create an object to hold the initialization options for a mapboxGL map
 var initOptions = {
@@ -30,6 +27,21 @@ map.on('style.load', function() {
     data: './data/castle_village.geojson',
   });
 
+  map.addSource('london_terrace', {
+    type: 'geojson',
+    data: './data/london_terrace.geojson',
+  });
+
+  map.addSource('boulevard_gardens', {
+    type: 'geojson',
+    data: './data/boulevard_gardens.geojson',
+  });
+
+  map.addSource('100_barclay_street', {
+    type: 'geojson',
+    data: './data/100_barclay_street.geojson',
+  });
+
 
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
@@ -44,13 +56,32 @@ map.on('style.load', function() {
       }
     });
 
+    map.addLayer({
+      id: 'fill-london_terrace',
+      type: 'fill',
+      source: 'london_terrace',
+      paint: {
+          'fill-color': 'pink',
+        }
+      });
 
-  // add an empty data source, which we will use to highlight the lot the user is hovering over
-  map.addSource('highlight-feature', {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      paint: 'blue'
+      map.addLayer({
+        id: 'fill-boulevard_gardens',
+        type: 'fill',
+        source: 'boulevard_gardens',
+        paint: {
+            'fill-color': 'teal',
+          }
+        });
+
+        map.addLayer({
+          id: 'fill-100_barclay_street',
+          type: 'fill',
+          source: '100_barclay_street',
+          paint: {
+              'fill-color': 'orange',
+            }
+          });
 
 
   // add a layer for the highlighted lot
@@ -64,6 +95,33 @@ map.on('style.load', function() {
       'line-color': 'white',
     }
   });
+
+  // Fly to Buttons to each divisions
+  $('#London').on('click', function() {
+    map.flyTo({
+      center: [-74.0031432, 40.7474312],
+      zoom: 16
+    })
+  })
+  $('#Boulevard').on('click', function() {
+    map.flyTo({
+      center: [-73.907924, 40.7588546],
+      zoom: 16
+    })
+  })
+  $('#Barclay').on('click', function() {
+    map.flyTo({
+      center: [-74.0139115, 40.7139888],
+      zoom: 15
+    })
+  })
+  $('#Castle').on('click', function() {
+    map.flyTo({
+      center: [-73.939862, 40.853433],
+      zoom: 16
+    })
+  })
+
 
   // listen for the mouse moving over the map and react when the cursor is over our data
 

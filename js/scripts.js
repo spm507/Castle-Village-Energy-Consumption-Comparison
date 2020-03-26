@@ -83,44 +83,25 @@ map.on('style.load', function() {
             }
           });
 
-
-  // add a layer for the highlighted lot
-  map.addLayer({
-    id: 'highlight-line',
-    type: 'line',
-    source: 'highlight-feature',
-    paint: {
-      'line-width': 2,
-      'line-opacity': 0.9,
-      'line-color': 'white',
+  map.addSource('highlight-feature', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: []
     }
   });
 
-  // Fly to Buttons to each divisions
-  $('#London').on('click', function() {
-    map.flyTo({
-      center: [-74.0031432, 40.7474312],
-      zoom: 16
-    })
-  })
-  $('#Boulevard').on('click', function() {
-    map.flyTo({
-      center: [-73.907924, 40.7588546],
-      zoom: 16
-    })
-  })
-  $('#Barclay').on('click', function() {
-    map.flyTo({
-      center: [-74.0139115, 40.7139888],
-      zoom: 15
-    })
-  })
-  $('#Castle').on('click', function() {
-    map.flyTo({
-      center: [-73.939862, 40.853433],
-      zoom: 16
-    })
-  })
+// add a layer for the highlighted lot
+map.addLayer({
+id: 'highlight-line',
+type: 'line',
+source: 'highlight-feature',
+paint: {
+'line-width': 2,
+'line-opacity': 0.9,
+'line-color': 'white',
+}
+});
 
 
   // listen for the mouse moving over the map and react when the cursor is over our data
@@ -128,7 +109,11 @@ map.on('style.load', function() {
   map.on('mousemove', function (e) {
     // query for the features under the mouse, but only in the lots layer
     var features = map.queryRenderedFeatures(e.point, {
-        layers: ['fill-washington_heights'],
+        layers: ['fill-castle_village'],
+        layers: ['fill-london_terrace'],
+        layers: ['fill-boulevard_gardens'],
+        layers: ['fill-100_barclay_street'],
+
     });
 
     // if the mouse pointer is over a feature on our layer of interest
@@ -141,7 +126,7 @@ map.on('style.load', function() {
         <h4>${hoveredFeature.properties.Address}</h4>
         <p><strong>Year Built:</strong> ${hoveredFeature.properties.YearBuilt}</p>
         <p><strong>Zoning:</strong> ${hoveredFeature.properties.ZoneDist1}</p>
-      `
+  `
       $('#feature-info').html(featureInfo)
 
       // set this lot's polygon feature as the data for the highlight source
@@ -155,6 +140,32 @@ map.on('style.load', function() {
         type: 'FeatureCollection',
         features: []
       });
+
+      // Fly to Buttons to each divisions
+      $('#London').on('click', function() {
+        map.flyTo({
+          center: [-74.0031432, 40.7474312],
+          zoom: 16
+        })
+      })
+      $('#Boulevard').on('click', function() {
+        map.flyTo({
+          center: [-73.907924, 40.7588546],
+          zoom: 16
+        })
+      })
+      $('#Barclay').on('click', function() {
+        map.flyTo({
+          center: [-74.0139115, 40.7139888],
+          zoom: 15
+        })
+      })
+      $('#Castle').on('click', function() {
+        map.flyTo({
+          center: [-73.939862, 40.853433],
+          zoom: 16
+        })
+      })
 
       // reset the default message
       $('#feature-info').html(defaultText)

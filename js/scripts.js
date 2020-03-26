@@ -20,7 +20,7 @@ map.addControl(new mapboxgl.NavigationControl());
 
 // wait for the initial style to Load
 map.on('style.load', function() {
-
+});
   // add a geojson source to the map using our external geojson file
   map.addSource('castle_village', {
     type: 'geojson',
@@ -81,26 +81,37 @@ map.on('style.load', function() {
           paint: {
               'fill-color': 'orange',
             }
+          })
+
+          // Fly to Buttons to each divisions
+          $('#London').on('click', function() {
+            map.flyTo({
+              center: [-74.0031432, 40.7474312],
+              zoom: 16
+            });
           });
-
-
-
-// add a layer for the highlighted lot
-map.addLayer({
-id: 'highlight-line',
-type: 'line',
-source: 'highlight-feature',
-paint: {
-'line-width': 2,
-'line-opacity': 0.9,
-'line-color': 'white',
-}
-});
-
+          $('#Boulevard').on('click', function() {
+            map.flyTo({
+              center: [-73.907924, 40.7588546],
+              zoom: 16
+            });
+          });
+          $('#Barclay').on('click', function() {
+            map.flyTo({
+              center: [-74.0139115, 40.7139888],
+              zoom: 15
+            });
+          });
+          $('#Castle').on('click', function() {
+            map.flyTo({
+              center: [-73.939862, 40.853433],
+              zoom: 16
+            });
+          });
 
       // When a click event occurs on a feature in the res layer, open a popup at the
     // location of the click, with description HTML from its properties.
-    map.on('mouseenter', 'res-layer', function(e) {
+    map.on('mouseenter', 'fill-castle_village', function(e) {
       console.log(e)
       new mapboxgl.Popup()
       .setLngLat(e.lngLat)
@@ -109,7 +120,7 @@ paint: {
     });
 
     // Change the cursor to a pointer when the mouse is over the states layer.
-    map.on('mouseenter', 'res-layer', function() {
+    map.on('mouseenter', 'fill-castle_village', function() {
     map.getCanvas().style.cursor = 'pointer';
     });
 
@@ -117,35 +128,9 @@ paint: {
     var popup = new mapboxgl.Popup()
     // When a click event occurs on a feature in the res layer, open a popup at the
     // location of the click, with description HTML from its properties.
-    map.on('mouseenter', 'fill-Res', function(e) {
+    map.on('mouseenter', 'fill-castle_village', function(e) {
       popup
       .setLngLat(e.lngLat)
       .setHTML(e.features[0].properties.IND_NAME, e.features[0].properties.POP_TOT)
       .addTo(map);
     });
-
-      // Fly to Buttons to each divisions
-      $('#London').on('click', function() {
-        map.flyTo({
-          center: [-74.0031432, 40.7474312],
-          zoom: 16
-        })
-      })
-      $('#Boulevard').on('click', function() {
-        map.flyTo({
-          center: [-73.907924, 40.7588546],
-          zoom: 16
-        })
-      })
-      $('#Barclay').on('click', function() {
-        map.flyTo({
-          center: [-74.0139115, 40.7139888],
-          zoom: 15
-        })
-      })
-      $('#Castle').on('click', function() {
-        map.flyTo({
-          center: [-73.939862, 40.853433],
-          zoom: 16
-        })
-      })

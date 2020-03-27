@@ -126,7 +126,7 @@ map.on('style.load', function() {
       </body>
       <style>
                 #image-zoom:hover {
-                  transform: scale(3.5);
+                  transform: scale(3);
                 }
                 </style>
       `)
@@ -155,10 +155,11 @@ map.on('style.load', function() {
        <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       <strong> Website:</strong><a>${e.features[0].properties.website}</a>
        </body>
        <style>
                  #image-zoom:hover {
-                   transform: scale(3.5);
+                   transform: scale(2.5);
                  }
                  </style>
       `)
@@ -187,10 +188,11 @@ map.on('style.load', function() {
        <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       <strong> Website:</strong><a>${e.features[0].properties.website}</a>
        </body>
        <style>
                  #image-zoom:hover {
-                   transform: scale(3.5);
+                   transform: scale(2.5);
                  }
                  </style>
       `)
@@ -218,10 +220,11 @@ map.on('style.load', function() {
        <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       <strong> Website:</strong><a>${e.features[0].properties.website}</a>
        </body>
        <style>
                  #image-zoom:hover {
-                   transform: scale(3.5);
+                   transform: scale(3);
                  }
                  </style>
       `)

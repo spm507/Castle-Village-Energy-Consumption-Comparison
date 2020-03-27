@@ -122,11 +122,13 @@ map.on('style.load', function() {
       <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
       <strong> Address: </strong> ${e.features[0].properties.Address}</br>
       <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
-      <strong> Website:</strong><a>${e.features[0].properties.website}</a>
+      <strong> Website: </strong> <a href="http://www.${.properties.website}">${marker.properties.website}</a>
+      <br>
+                    <br>
       </body>
       <style>
                 #image-zoom:hover {
-                  transform: scale(3);
+                  transform: scale(1.5);
                 }
                 </style>
       `)
@@ -155,7 +157,8 @@ map.on('style.load', function() {
        <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
-       <strong> Website:</strong><a>${e.features[0].properties.website}</a>
+       <strong> Website:</strong> &nbsp;<a href="http://www.${e.features[0].properties.website}">${e.features[0].properties.website}</a>
+                     <br>
        </body>
        <style>
                  #image-zoom:hover {

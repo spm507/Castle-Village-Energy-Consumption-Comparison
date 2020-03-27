@@ -2,17 +2,16 @@
   "features":[
     {"type":"Feature",
       "properties":{
-    "PropertyName": "Castle Village",
+    "PropertyName": "Combined Heat and Power (CHP) Performance",
     "Address": "110-200 Cabrini Blvd.",
     "Borough":"Manhattan",
-    "website" : "http://www.castlevillage.com",
     "FloorArea" : "890130",
     "YearBuilt": "1939",
     "Score": "35",
     "Gas": "15770791.1",
     "Electricity" : "1871582.3",
     "Emissions" : "4576.8",
-    "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
+    "Picture" :"https://i.imgur.com/56LimsL.jpg"
   },
     "geometry":{
       "type":"Polygon",
@@ -21,17 +20,16 @@
           [-73.93917381763458,40.85472539445792],[-73.93933475017546,40.85467264709159],[-73.93931329250334,40.854567152232974],[-73.93944203853607,40.8545225197422],[-73.93938839435577,40.85440890963002],[-73.93925428390502,40.854433254670475],[-73.93917918205261,40.85429935683735],[-73.939071893692,40.85433181694295],[-73.93909335136414,40.85447788722135],[-73.93892705440521,40.85453063474274],[-73.93895924091339,40.85460772719846],[-73.93913626670837,40.854587439718834],[-73.93917381763458,40.85472539445792]]]}},
           {"type":"Feature",
             "properties":{
-              "PropertyName": "Castle Village",
+              "PropertyName": "Electricity Use - Grid Purchase",
               "Address": "110-200 Cabrini Blvd.",
               "Borough":"Manhattan",
-              "website" : "http://www.castlevillage.com",
               "FloorArea" : "890130",
               "YearBuilt": "1939",
               "Score": "35",
               "Gas": "15770791.1",
               "Electricity" : "1871582.3",
               "Emissions" : "4576.8",
-              "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
+              "Picture" :"https://i.imgur.com/BhNpv9m.jpg"
               },
               "geometry":{
                 "type":"Polygon",
@@ -40,7 +38,7 @@
                     [-73.93929719924927,40.854031560359275],[-73.93932938575745,40.854104595869714],[-73.93951177597046,40.854096480816985],[-73.93953859806061,40.85422632154158],[-73.93971025943756,40.854201976425095],[-73.93971562385559,40.85406402059607],[-73.93983900547028,40.854027502828544],[-73.93977999687195,40.853881431557106],[-73.93962979316711,40.85393417955339],[-73.93954932689667,40.85381651088866],[-73.93945276737213,40.85383274106175],[-73.93947958946228,40.85396663983792],[-73.93929719924927,40.854031560359275]]]}},
                     {"type":"Feature",
                       "properties":{
-                        "PropertyName": "Castle Village",
+                        "PropertyName": "Total GHG Emissions",
                         "Address": "110-200 Cabrini Blvd.",
                         "Borough":"Manhattan",
                         "website" : "http://www.castlevillage.com",
@@ -50,7 +48,7 @@
                         "Gas": "15770791.1",
                         "Electricity" : "1871582.3",
                         "Emissions" : "4576.8",
-                        "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
+                        "Picture" :"https://i.imgur.com/RyWABdu.jpg"
                         },
                         "geometry":{
                           "type":"Polygon",
@@ -59,7 +57,7 @@
                               [-73.94008040428162,40.85330931597644],[-73.94001603126526,40.853333661420955],[-73.93995702266693,40.85337017957093],[-73.93982291221619,40.853280912946566],[-73.93973171710968,40.8533174311256],[-73.93982291221619,40.85347161877082],[-73.93967270851135,40.853540597338025],[-73.93972635269165,40.85360551827684],[-73.93980145454407,40.8535892880481],[-73.93989801406859,40.85355277001888],[-73.93994092941284,40.853629863612476],[-73.93999993801117,40.85368666936091],[-73.94014477729797,40.85360146072001],[-73.9401125907898,40.85354465489855],[-73.94013404846191,40.85352436709336],[-73.94011795520782,40.85346756120579],[-73.94018769264221,40.85342292797426],[-73.94008040428162,40.85330931597644]]]}},
                               {"type":"Feature",
                                 "properties":{
-                                  "PropertyName": "Castle Village",
+                                  "PropertyName": "Natural Gas",
                                   "Address": "110-200 Cabrini Blvd.",
                                   "Borough":"Manhattan",
                                   "website" : "http://www.castlevillage.com",
@@ -69,7 +67,7 @@
                                   "Gas": "15770791.1",
                                   "Electricity" : "1871582.3",
                                   "Emissions" : "4576.8",
-                                  "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
+                                  "Picture" :"https://i.imgur.com/vPAFvD2.jpg"
                                   },
                                   "geometry":{
                                     "type":"Polygon",
@@ -78,7 +76,7 @@
                                         [-73.94014477729797,40.85311860968502],[-73.94030034542082,40.85303340031356],[-73.9402574300766,40.85289949965124],[-73.9403486251831,40.85286298124183],[-73.9402413368225,40.85274125306508],[-73.94017696380615,40.85278994436263],[-73.94012331962585,40.85280617478718],[-73.93998384475708,40.85270473456845],[-73.93990337848663,40.852753425892836],[-73.93997848033904,40.85288326924955],[-73.93982827663422,40.85297253640968],[-73.93989264965057,40.85304963067847],[-73.94006431102753,40.85298470919494],[-73.94010186195374,40.85305774585944],[-73.94014477729797,40.85311860968502]]]}},
                               {"type":"Feature",
                                 "properties":{
-                                  "PropertyName": "Castle Village",
+                                  "PropertyName": "Self-Reported Gross Floor Area",
                                   "Address": "110-200 Cabrini Blvd.",
                                   "Borough":"Manhattan",
                                   "website" : "http://www.castlevillage.com",
@@ -88,7 +86,7 @@
                                   "Gas": "15770791.1",
                                   "Electricity" : "1871582.3",
                                   "Emissions" : "4576.8",
-                                  "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
+                                  "Picture" :"https://i.imgur.com/5Sz5XX4.jpg"
                                   },
                                   "geometry":{
                                     "type":"Polygon",

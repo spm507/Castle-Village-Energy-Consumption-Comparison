@@ -182,4 +182,5 @@ map.on('style.load', function() {
    map.on('mouseleave', 'fill-london_terrace', function() {
     map.getCanvas().style.cursor = '';
     popup.remove()
+    });
    });

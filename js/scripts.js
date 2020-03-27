@@ -111,7 +111,19 @@ map.on('style.load', function() {
    map.on('mouseenter', 'fill-castle_village', function(e) {
     popup
      .setLngLat(e.lngLat)
-     .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+     .setHTML(`
+      <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+      <p><h2>${e.features[0].properties.PropertyName}</h2></p>
+      <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
+      <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
+      <strong> Natural Gas Use (kBtu): </strong> ${e.features[0].properties.Gas}</br>
+      <strong> Electricity Use - Grid Purchase (kWh): </strong> ${e.features[0].properties.Electricity}</br>
+      <strong> Total GHG Emissions (Metric Tons CO2e): </strong> ${e.features[0].properties.Emissions}</br>
+      <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
+      <strong> Address: </strong> ${e.features[0].properties.Address}</br>
+      <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+      </body>
+      `)
      .addTo(map);
    });
 
@@ -131,7 +143,19 @@ map.on('style.load', function() {
    map.on('mouseenter', 'fill-boulevard_gardens', function(e) {
     popup
      .setLngLat(e.lngLat)
-     .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+     .setHTML(`
+       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <p><h2>${e.features[0].properties.PropertyName}</h2></p>
+       <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
+       <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
+       <strong> Natural Gas Use (kBtu): </strong> ${e.features[0].properties.Gas}</br>
+       <strong> Electricity Use - Grid Purchase (kWh): </strong> ${e.features[0].properties.Electricity}</br>
+       <strong> Total GHG Emissions (Metric Tons CO2e): </strong> ${e.features[0].properties.Emissions}</br>
+       <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
+       <strong> Address: </strong> ${e.features[0].properties.Address}</br>
+       <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       </body>
+      `)
      .addTo(map);
    });
 
@@ -151,7 +175,19 @@ map.on('style.load', function() {
    map.on('mouseenter', 'fill-100_barclay_street', function(e) {
     popup
      .setLngLat(e.lngLat)
-     .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+     .setHTML(`
+       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <p><h2>${e.features[0].properties.PropertyName}</h2></p>
+       <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
+       <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
+       <strong> Natural Gas Use (kBtu): </strong> ${e.features[0].properties.Gas}</br>
+       <strong> Electricity Use - Grid Purchase (kWh): </strong> ${e.features[0].properties.Electricity}</br>
+       <strong> Total GHG Emissions (Metric Tons CO2e): </strong> ${e.features[0].properties.Emissions}</br>
+       <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
+       <strong> Address: </strong> ${e.features[0].properties.Address}</br>
+       <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       </body>
+      `)
      .addTo(map);
    });
    // Change the cursor to a pointer when the mouse is over the states layer.
@@ -170,7 +206,19 @@ map.on('style.load', function() {
    map.on('mouseenter', 'fill-london_terrace', function(e) {
     popup
      .setLngLat(e.lngLat)
-     .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+     .setHTML(`
+       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <p><h2>${e.features[0].properties.PropertyName}</h2></p>
+       <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
+       <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
+       <strong> Natural Gas Use (kBtu): </strong> ${e.features[0].properties.Gas}</br>
+       <strong> Electricity Use - Grid Purchase (kWh): </strong> ${e.features[0].properties.Electricity}</br>
+       <strong> Total GHG Emissions (Metric Tons CO2e): </strong> ${e.features[0].properties.Emissions}</br>
+       <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
+       <strong> Address: </strong> ${e.features[0].properties.Address}</br>
+       <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+       </body>
+      `)
      .addTo(map);
    });
 

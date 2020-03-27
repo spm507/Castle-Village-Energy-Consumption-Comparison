@@ -125,7 +125,7 @@ map.on('style.load', function() {
       </body>
       <style>
                 #image-zoom:hover {
-                  transform: scale(1.5);
+                  transform: scale(4);
                 }
                 </style>
       `)

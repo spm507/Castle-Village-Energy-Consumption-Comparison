@@ -15,12 +15,16 @@ var initOptions = {
 // create the new map
 var map = new mapboxgl.Map(initOptions);
 
+var features = map.queryRenderedFeatures(e.point, {
+ layers: ['fill-castle_village', 'fill-london_terrace', 'fill-boulevard_gardens', 'fill-100_barclay_street']
+});
+
 // add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 
 // wait for the initial style to Load
 map.on('style.load', function() {
-});
+
   // add a geojson source to the map using our external geojson file
   map.addSource('castle_village', {
     type: 'geojson',
@@ -40,7 +44,7 @@ map.on('style.load', function() {
   map.addSource('100_barclay_street', {
     type: 'geojson',
     data: './data/100_barclay_street.geojson',
-  });
+  })
 
 
   // let's make sure the source got added by logging the current map state to the console
@@ -109,21 +113,6 @@ map.on('style.load', function() {
             });
           });
 
-      // When a click event occurs on a feature in the res layer, open a popup at the
-    // location of the click, with description HTML from its properties.
-    map.on('mouseenter', 'fill-castle_village', function(e) {
-      console.log(e)
-      new mapboxgl.Popup()
-      .setLngLat(e.lngLat)
-      .setHTML(e.features[0].properties.IND_NAME)
-      .addTo(map);
-    });
-
-    // Change the cursor to a pointer when the mouse is over the states layer.
-    map.on('mouseenter', 'fill-castle_village', function() {
-    map.getCanvas().style.cursor = 'pointer';
-    });
-
 
     var popup = new mapboxgl.Popup()
     // When a click event occurs on a feature in the res layer, open a popup at the
@@ -131,6 +120,75 @@ map.on('style.load', function() {
     map.on('mouseenter', 'fill-castle_village', function(e) {
       popup
       .setLngLat(e.lngLat)
-      .setHTML(e.features[0].properties.IND_NAME, e.features[0].properties.POP_TOT)
+      .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
       .addTo(map);
+    });
+
+    map.on('mouseenter', 'fill-castle_village', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'fill-castle_village', function() {
+    map.getCanvas().style.cursor = '';
+    popup.remove()
+    });
+
+
+    var popup = new mapboxgl.Popup()
+    // When a click event occurs on a feature in the res layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('mouseenter', 'fill-boulevard_gardens', function(e) {
+      popup
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+      .addTo(map);
+    });
+
+    map.on('mouseenter', 'fill-boulevard_gardens', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+
+
+    map.on('mouseleave', 'fill-boulevard_gardens', function() {
+    map.getCanvas().style.cursor = '';
+    popup.remove()
+    });
+
+    var popup = new mapboxgl.Popup()
+    // When a click event occurs on a feature in the res layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('mouseenter', 'fill-100_barclay_street', function(e) {
+      popup
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+      .addTo(map);
+    });
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'fill-100_barclay_street', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'fill-100_barclay_street', function() {
+    map.getCanvas().style.cursor = '';
+    popup.remove()
+    });
+
+    var popup = new mapboxgl.Popup()
+    // When a click event occurs on a feature in the res layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('mouseenter', 'fill-london_terrace', function(e) {
+      popup
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.PropertyName, e.features[0].properties.YearBuilt)
+      .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'fill-london_terrace', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'fill-london_terrace', function() {
+    map.getCanvas().style.cursor = '';
+    popup.remove()
     });

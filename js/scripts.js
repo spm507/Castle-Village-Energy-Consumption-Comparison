@@ -112,7 +112,7 @@ map.on('style.load', function() {
     popup
      .setLngLat(e.lngLat)
      .setHTML(`
-      <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+      <body><td><div id='image-zoom' style="background-image:url('${e.features[0].properties.Picture}'); height：50px; width: 120px;margin-left: auto; margin-right: auto;background-repeat:no-repeat; background-position:center; background-size:contain "></div></td>
       <p><h2>${e.features[0].properties.PropertyName}</h2></p>
       <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
       <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
@@ -122,18 +122,19 @@ map.on('style.load', function() {
       <strong> YearBuilt: </strong> ${e.features[0].properties.YearBuilt}</br>
       <strong> Address: </strong> ${e.features[0].properties.Address}</br>
       <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
+      <strong> Website:</strong><a>${e.features[0].properties.website}</a>
       </body>
+      <style>
+                #image-zoom:hover {
+                  transform: scale(3.5);
+                }
+                </style>
       `)
      .addTo(map);
    });
 
    map.on('mouseenter', 'fill-castle_village', function() {
     map.getCanvas().style.cursor = 'pointer';
-   });
-
-   map.on('mouseleave', 'fill-castle_village', function() {
-    map.getCanvas().style.cursor = '';
-    popup.remove()
    });
 
 
@@ -144,7 +145,7 @@ map.on('style.load', function() {
     popup
      .setLngLat(e.lngLat)
      .setHTML(`
-       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <body><td><div id='image-zoom' style="background-image:url('${e.features[0].properties.Picture}'); height：50px; width: 120px;margin-left: auto; margin-right: auto;background-repeat:no-repeat; background-position:center; background-size:contain "></div></td>
        <p><h2>${e.features[0].properties.PropertyName}</h2></p>
        <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
        <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
@@ -155,6 +156,11 @@ map.on('style.load', function() {
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
        </body>
+       <style>
+                 #image-zoom:hover {
+                   transform: scale(3.5);
+                 }
+                 </style>
       `)
      .addTo(map);
    });
@@ -164,11 +170,6 @@ map.on('style.load', function() {
    });
 
 
-   map.on('mouseleave', 'fill-boulevard_gardens', function() {
-    map.getCanvas().style.cursor = '';
-    popup.remove()
-   });
-
    var popup = new mapboxgl.Popup()
    // When a click event occurs on a feature in the res layer, open a popup at the
    // location of the click, with description HTML from its properties.
@@ -176,7 +177,7 @@ map.on('style.load', function() {
     popup
      .setLngLat(e.lngLat)
      .setHTML(`
-       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <body><td><div id='image-zoom' style="background-image:url('${e.features[0].properties.Picture}'); height：50px; width: 120px;margin-left: auto; margin-right: auto;background-repeat:no-repeat; background-position:center; background-size:contain "></div></td>
        <p><h2>${e.features[0].properties.PropertyName}</h2></p>
        <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
        <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
@@ -187,17 +188,17 @@ map.on('style.load', function() {
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
        </body>
+       <style>
+                 #image-zoom:hover {
+                   transform: scale(3.5);
+                 }
+                 </style>
       `)
      .addTo(map);
    });
    // Change the cursor to a pointer when the mouse is over the states layer.
    map.on('mouseenter', 'fill-100_barclay_street', function() {
     map.getCanvas().style.cursor = 'pointer';
-   });
-
-   map.on('mouseleave', 'fill-100_barclay_street', function() {
-    map.getCanvas().style.cursor = '';
-    popup.remove()
    });
 
    var popup = new mapboxgl.Popup()
@@ -207,7 +208,7 @@ map.on('style.load', function() {
     popup
      .setLngLat(e.lngLat)
      .setHTML(`
-       <body><img id='Picture' style="background-image:url('${e.features[0].properties.Picture}'); height：10px; width:300px;margin-left: auto; margin-right: auto; width: 50%;background-repeat:no-repeat; background-position:center; background-size:contain "></img><br>
+       <body><td><div id='image-zoom' style="background-image:url('${e.features[0].properties.Picture}'); height：50px; width: 120px;margin-left: auto; margin-right: auto;background-repeat:no-repeat; background-position:center; background-size:contain "></div></td>
        <p><h2>${e.features[0].properties.PropertyName}</h2></p>
        <strong> ENERGY STAR Score: </strong> ${e.features[0].properties.Score}</br>
        <strong> Self-Reported Gross Floor Area (ft²): </strong> ${e.features[0].properties.FloorArea}</br>
@@ -218,6 +219,11 @@ map.on('style.load', function() {
        <strong> Address: </strong> ${e.features[0].properties.Address}</br>
        <strong> Borough: </strong> ${e.features[0].properties.Borough}</br>
        </body>
+       <style>
+                 #image-zoom:hover {
+                   transform: scale(3.5);
+                 }
+                 </style>
       `)
      .addTo(map);
    });
@@ -226,9 +232,4 @@ map.on('style.load', function() {
    map.on('mouseenter', 'fill-london_terrace', function() {
     map.getCanvas().style.cursor = 'pointer';
    });
-
-   map.on('mouseleave', 'fill-london_terrace', function() {
-    map.getCanvas().style.cursor = '';
-    popup.remove()
-    });
-   });
+});

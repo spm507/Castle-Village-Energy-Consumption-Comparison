@@ -18,6 +18,17 @@ body {
   left: 300px;
 }
 
+#Picture {
+  padding: 15px;
+  min-height:150px;
+}
+
+#image-zoom {
+  padding: 15px;
+  min-height: 150px;
+  opacity: 100;
+}
+
 h3 {
   margin-top: 0;
   font-size: 1.8rem;

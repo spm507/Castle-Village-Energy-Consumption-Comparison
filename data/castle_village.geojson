@@ -12,7 +12,7 @@
     "Gas": "15770791.1",
     "Electricity" : "1871582.3",
     "Emissions" : "4576.8",
-    "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+    "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
   },
     "geometry":{
       "type":"Polygon",
@@ -31,7 +31,7 @@
               "Gas": "15770791.1",
               "Electricity" : "1871582.3",
               "Emissions" : "4576.8",
-              "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+              "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
               },
               "geometry":{
                 "type":"Polygon",
@@ -50,7 +50,7 @@
                         "Gas": "15770791.1",
                         "Electricity" : "1871582.3",
                         "Emissions" : "4576.8",
-                        "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+                        "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
                         },
                         "geometry":{
                           "type":"Polygon",
@@ -69,7 +69,7 @@
                                   "Gas": "15770791.1",
                                   "Electricity" : "1871582.3",
                                   "Emissions" : "4576.8",
-                                  "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+                                  "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
                                   },
                                   "geometry":{
                                     "type":"Polygon",
@@ -88,7 +88,7 @@
                                   "Gas": "15770791.1",
                                   "Electricity" : "1871582.3",
                                   "Emissions" : "4576.8",
-                                  "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+                                  "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
                                   },
                                   "geometry":{
                                     "type":"Polygon",
@@ -107,7 +107,7 @@
                                             "Gas": "15770791.1",
                                             "Electricity" : "1871582.3",
                                             "Emissions" : "4576.8",
-                                            "Picture" :"https://upload.wikimedia.org/wikipedia/commons/f/f1/CastleVillage.Manhattan_crop.jpg"
+                                            "Picture" :"https://ds2.cityrealty.com/img/9da5235b6068d8cde4405caac94d9593a79de905+w+h+0+60/castle-village-200-cabrini-boulevard-07.jpg"
                                             },"geometry":{
                                               "type":"Polygon",
                                               "coordinates":[
